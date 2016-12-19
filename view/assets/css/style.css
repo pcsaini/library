@@ -1,0 +1,132 @@
+/* YOUR CUSTOM STYLES */
+html,
+body,main {
+    height: 100%;
+}
+/* Navigation*/
+
+.navbar {
+    background-color: #00bcd4;
+}
+
+.top-nav-collapse {
+    background-color: #00bcd4;
+}
+
+footer.page-footer {
+    background-color: #00bcd4;
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+        background-color: #00bcd4;
+    }
+}
+/* Carousel*/
+
+.carousel {
+    margin-top: 50px;
+    height: 60%;
+}
+
+@media (max-width: 776px) {
+    .carousel {
+        height: 100%;
+    }
+}
+
+.carousel-item,
+.active {
+    height: 100%;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+.carousel-item:nth-child(1) {
+    background-image: url("../img/library/library_1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.4;
+}
+
+.carousel-item:nth-child(2) {
+    background-image: url("../img/library/library_2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.carousel-item:nth-child(3) {
+    background-image: url("../img/library/library_3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/*Caption*/
+
+.flex-center {
+    color: #fff;
+}
+
+.main-content{
+    margin-top: 50px;
+}
+
+/*
+login Section*/
+.login-logo{
+    padding: 30px;
+    text-align: center;
+}
+.login-logo img{
+    width: 180px;
+}
+.login-form{
+    border-radius:3px;
+    background:#ffffff;
+    border-top:3px solid #00bcd4;
+    margin:4% auto;
+    max-width:400px;
+    box-shadow:0 1px 5px rgba(0, 0, 0, 0.1)
+}
+
+.login-form .form-header{
+    color:#444;
+    display:block;
+    padding:20px;
+    position:relative;
+    border-bottom:1px solid #00bcd4;
+}
+
+.login-form .form-header .form-title {
+    display:inline-block;
+    font-size:20px;
+    margin:0;
+    line-height:1
+}
+
+.login-form .form-body {
+    border-top-left-radius:0;
+    border-top-right-radius:0;
+    border-bottom-right-radius:3px;
+    border-bottom-left-radius:3px;
+    padding:20px;
+}
+
+.login-form .form-footer {
+    background-color:#fff;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.login-form .form-control{
+    font-size: 16px;
+    height: auto;
+}
+.login-form .form-group #error{
+    color:#a94442;
+}
+
+.form-signin .form-signin-heading{
+    color:#00bcd4;
+}
