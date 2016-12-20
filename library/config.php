@@ -18,7 +18,7 @@ $GLOBALS['website_name'] = "Library";
 $GLOBALS['hostname']="localhost";
 $GLOBALS['username']="root";
 $GLOBALS['password']="";
-$GLOBALS['database']="login";
+$GLOBALS['database']="library";
 
 //common views
 $GLOBALS['header'] = "header.php";

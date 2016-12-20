@@ -11,7 +11,6 @@ class home{
     public function __construct()
     {
         $this->model = new auth_model();
-
     }
     public function index(){
         $data['page_title'] = "Home : Library";

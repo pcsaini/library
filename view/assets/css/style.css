@@ -6,66 +6,21 @@ body,main {
 /* Navigation*/
 
 .navbar {
-    background-color: #00bcd4;
+    background-color: #16456C;
 }
 
 .top-nav-collapse {
-    background-color: #00bcd4;
+    background-color: #16456C;
 }
 
 footer.page-footer {
-    background-color: #00bcd4;
+    background-color: #16456C;
 }
 
 @media only screen and (max-width: 768px) {
     .navbar {
-        background-color: #00bcd4;
+        background-color: #16456C;
     }
-}
-/* Carousel*/
-
-.carousel {
-    margin-top: 50px;
-    height: 60%;
-}
-
-@media (max-width: 776px) {
-    .carousel {
-        height: 100%;
-    }
-}
-
-.carousel-item,
-.active {
-    height: 100%;
-}
-
-.carousel-inner {
-    height: 100%;
-}
-
-.carousel-item:nth-child(1) {
-    background-image: url("../img/library/library_1.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 0.4;
-}
-
-.carousel-item:nth-child(2) {
-    background-image: url("../img/library/library_2.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.carousel-item:nth-child(3) {
-    background-image: url("../img/library/library_3.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-/*Caption*/
-
-.flex-center {
-    color: #fff;
 }
 
 .main-content{
@@ -75,58 +30,131 @@ footer.page-footer {
 /*
 login Section*/
 .login-logo{
-    padding: 30px;
+    margin: 70px;
     text-align: center;
 }
 .login-logo img{
-    width: 180px;
-}
-.login-form{
-    border-radius:3px;
-    background:#ffffff;
-    border-top:3px solid #00bcd4;
-    margin:4% auto;
-    max-width:400px;
-    box-shadow:0 1px 5px rgba(0, 0, 0, 0.1)
+    width: 100px;
 }
 
-.login-form .form-header{
-    color:#444;
-    display:block;
-    padding:20px;
-    position:relative;
-    border-bottom:1px solid #00bcd4;
-}
+.form-content{
+    background: #ffffff;
+    max-width: 420px;
+    width: 100%;
+    border-top: 5px solid #16456c;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    margin: 50px auto;
 
-.login-form .form-header .form-title {
-    display:inline-block;
-    font-size:20px;
-    margin:0;
-    line-height:1
 }
+.login-form {
+    padding: 40px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    box-shadow: 0 1px 2px rgba(0,0,0,.05);
 
-.login-form .form-body {
-    border-top-left-radius:0;
-    border-top-right-radius:0;
-    border-bottom-right-radius:3px;
-    border-bottom-left-radius:3px;
-    padding:20px;
 }
-
-.login-form .form-footer {
-    background-color:#fff;
-    padding-bottom: 20px;
+.login-form h2 {
+    margin: 0 0 20px;
+    color: #16456c;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1;
     text-align: center;
 }
-
-.login-form .form-control{
-    font-size: 16px;
-    height: auto;
+.login-form input {
+    outline: none;
+    display: block;
+    width: 100%;
+    height: 42px;
+    border: 1px solid #16456c;
+    margin: 20px 0 0px 0;
+    padding: 0 20px 0 50px;
+    box-sizing: border-box;
+    font-wieght: 400;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
 }
-.login-form .form-group #error{
-    color:#a94442;
+.login-form input#username {
+    background: #fff url('user.png') 20px no-repeat;
+    background-size: 16px 16px;
+    color: #16456c;
 }
 
-.form-signin .form-signin-heading{
-    color:#00bcd4;
+.login-form input#username:focus {
+    background: #fff url('user.png') 20px no-repeat;
+    background-size: 14px 14px;
+    color: #16456c;
+}
+
+.login-form input#password {
+    background: #fff url('locked.png') 20px no-repeat;
+    background-size: 16px 16px;
+    color: #16456c;
+}
+
+.login-form input#password:focus {
+    background: #fff url('locked.png') 20px no-repeat;
+    background-size: 14px 14px;
+    color: #16456c;
+}
+.login-form input#email {
+    background: #fff url('mail.png') 20px no-repeat;
+    background-size: 16px 16px;
+    color: #16456c;
+}
+
+.login-form input#email:focus {
+    background: #fff url('mail.png') 20px no-repeat;
+    background-size: 14px 14px;
+    color: #16456c;
+}
+.login-form input:focus {
+    border: 1px solid #16456c;
+    color: #16456c;
+}
+label{
+    color: red;
+}
+.errorDiv{
+    padding: 10px;
+}
+.login-form button {
+    cursor: pointer;
+    background: #16456c;
+    width: 100%;
+    border: 0;
+    margin-top: 20px;
+    padding: 10px 15px;
+    color: #ffffff;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
+}
+.login-form button:hover {
+    background: #0d293f;
+}
+.login-form .cta {
+    background: #f2f2f2;
+    width: 100%;
+    padding: 15px 40px;
+    box-sizing: border-box;
+    color: #666666;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.login-form .cta a {
+    color: #16456c;
+    text-decoration: none;
+}
+.login-form p.errors{
+    text-align: center;
+    color: red;
+}
+
+@media screen and (max-width: 768px) {
+    body{
+        padding: 10px;
+    }
 }

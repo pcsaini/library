@@ -2,47 +2,22 @@
     <div class="login-logo">
         <img src="<?php echo $GLOBALS['base_url']; ?>view/assets/img/logo.png">
     </div>
-
-    <div class="login-form">
-
-        <!-- form start -->
-        <form method="post" role="form" id="login-form" autocomplete="off" action="">
-
-            <div class="form-header">
-                <h3 class="form-title">Login</h3>
-
-                <div class="pull-right">
-                    <h3 class="form-title"><span class="fa fa-pencil"></span></h3>
-                </div>
-
-            </div>
-
-            <div class="form-body">
-
-                <div id="errorDiv"></div>
-
-                <div class="form-group">
-                    <div class="input-group">
-                        <input name="username" type="text" id="username" class="form-control" placeholder="Username" maxlength="40" autofocus="true">
-                    </div>
-                    <span class="help-block" id="error"></span>
-                </div>
-
-                <div class="form-group">
-                    <div class="input-group">
-                        <input name="password" id="password" type="password" class="form-control" placeholder="Password">
-                    </div>
-                    <span class="help-block" id="error"></span>
-                </div>
-
-            </div>
-
-            <div class="form-footer">
-                <button type="submit" class="btn btn-cyan waves-effect" id="btn-login">
-                    <span class="fa fa-sign-in"></span> &nbsp; Login
-                </button><br>
-                <a href="#">Forget Password ?</a>
-            </div>
-
-        </form>
+    <div class="form-content">
+        <div class="login-form">
+            <h2>Login</h2>
+            <?php
+            if(!empty($errors)) {
+                foreach($errors as $message) {
+                    echo "<div class='alert-danger errorDiv'>".$message[0]."</div>";
+                }
+            }
+            ?>
+            <form method="post" id="login-form" action="<?php echo $GLOBALS['dynamic_url']; ?>login?user_type=1" autocomplete="off">
+                <input type="text" placeholder="Username" id="username" name="username"/>
+                <input type="password" placeholder="Password" id="password" name="password"/>
+                <button type="submit" id="btn-login"><i class="fa fa-sign-in"></i> Login</button>
+            </form>
+            <div class="cta"><a href="forgot_password.php"><i class="fa fa-info-circle"></i> Forgot your password?</a></div>
+        </div>
+    </div>
 </div>
