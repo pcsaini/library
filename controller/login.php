@@ -48,19 +48,93 @@ class login{
     }
 
     public function forget_password(){
+        if(!empty($_POST)){
+            $data['post'] = $_POST;
+            $email = $_POST['email'];
+            $email = strip_tags($email);
+            $email = trim($email);
+            if ($this->emailExists($email)) {
+                $data['result'] = $this->model->forgetPassword($email);
+            }
+            else{
+                $data['errors'] = array(array("Email Address Not Exists"));
+            }
+            if ($this->model->loggedIn() == true){
+                header("location: ".$GLOBALS['dynamic_url']."home");
+                exit();
+            }
 
+
+        }
+        $data['page_title'] = "Library : Forget Password";
+        $data['view_page'] = "users/forget_password";
+        $data['header'] = $GLOBALS['header'];
+        $data['footer'] = $GLOBALS['footer'];
+
+        return $data;
+    }
+
+    public function reset_password(){
+        $email = $_GET['email'];
+
+        if (!empty($_POST)){
+            $password = $_POST['new_password'];
+            $password = strip_tags($password);
+            $password = trim($password);
+
+            $data['result'] = $this->model->reset_password($email,$password);
+        }
+
+
+        $data['page_title'] = "Library : Reset Password";
+        $data['view_page'] = "users/reset_password";
+        $data['header'] = $GLOBALS['header'];
+        $data['footer'] = $GLOBALS['footer'];
+
+        return $data;
     }
 
     public function change_password(){
 
+        if (!empty($_POST)){
+            $password = $_POST['new_password'];
+            $password = strip_tags($password);
+            $password = trim($password);
+
+            $result = $this->model->changePassword($password);
+        }
+
+        $data['page_title'] = "Library : Change Password";
+        $data['view_page'] = "users/change_password";
+        $data['header'] = $GLOBALS['header'];
+        $data['footer'] = $GLOBALS['footer'];
+
+        return $data;
     }
 
     public function profile(){
 
+        $data['page_title'] = "Library : Profile";
+        $data['view_page'] = "users/profile";
+        $data['header'] = $GLOBALS['header'];
+        $data['footer'] = $GLOBALS['footer'];
+
+        return $data;
     }
 
     public function setting(){
 
+        $data['page_title'] = "Library : Setting";
+        $data['view_page'] = "users/setting";
+        $data['header'] = $GLOBALS['header'];
+        $data['footer'] = $GLOBALS['footer'];
+
+        return $data;
+    }
+
+    public function emailExists($email) {
+        $result = $this->model->checkIfExists("users","WHERE email='$email'");
+        return $result;
     }
 
     public function logout(){

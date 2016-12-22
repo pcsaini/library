@@ -26,6 +26,53 @@ class auth_model extends DBconfig{
         }
         return $result;
     }
+
+    public function forgetPassword($email){
+        $email = mysqli_real_escape_string($this->connection,$email);
+        $password = substr(md5(microtime()),rand(0,26),15);
+        $resultRaw = $this->helper->db_select("first_name", "users", "WHERE email='$email'");
+        $user_array = $resultRaw->fetch_assoc();
+        $name = $user_array['first_name'];
+        $baseurl = $GLOBALS['base_url'];
+
+        $subject = "Forgot Password Request";
+        $body = "Hi $name, <br/> Please click the following link for password reset - <br/> ".$baseurl."login/reset_password?password=$password&email=$email <br/> Thanks,";
+        $alertmsg = "Password reset successfully requested, Please check your mail for more details";
+        mail($email,$subject, $body,"premchandsaini779@gmail.com");
+        print_r($body);
+        die();
+    }
+
+    public function reset_password($email,$password){
+        $email = mysqli_real_escape_string($this->connection, $email);
+        $password = mysqli_real_escape_string($this->connection, $password);
+        $password = md5($password);
+        $data = array("password"=>$password);
+        $result = $this->helper->db_update($data, "users", "WHERE email='$email'");
+        return $result;
+    }
+
+    public function changePassword($password) {
+        $user_id = $_SESSION['session_id'];
+        $password = mysqli_real_escape_string($this->connection, $password);
+        $password = md5($password);
+        $data = array("password"=>$password);
+        $result = $this->helper->db_update($data, "users", "WHERE user_id='$user_id'");
+        return $result;
+    }
+
+    public function checkIfExists($tbname,$where) {
+        $result = $this->helper->check($tbname, $where);
+        return $result;
+    }
+
+    public function userDetail(){
+        $session_id = $_SESSION['session_id'];
+        $resultRaw = $this->helper->db_select("*", "users", "WHERE user_id='$session_id'");
+        $result = $resultRaw->fetch_assoc();
+        return $result;
+    }
+
     public function loggedIn(){
         return (isset($_SESSION['session_id'])) ? true : false;
     }

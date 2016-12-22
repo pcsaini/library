@@ -97,6 +97,39 @@ login Section*/
     background-size: 14px 14px;
     color: #16456c;
 }
+.login-form input#current_password{
+    background: #fff url('locked.png') 20px no-repeat;
+    background-size: 16px 16px;
+    color: #16456c;
+}
+
+.login-form input#current_password:focus {
+    background: #fff url('locked.png') 20px no-repeat;
+    background-size: 14px 14px;
+    color: #16456c;
+}
+.login-form input#new_password{
+    background: #fff url('locked.png') 20px no-repeat;
+    background-size: 16px 16px;
+    color: #16456c;
+}
+
+.login-form input#new_password:focus {
+    background: #fff url('locked.png') 20px no-repeat;
+    background-size: 14px 14px;
+    color: #16456c;
+}
+.login-form input#new_password_again {
+    background: #fff url('locked.png') 20px no-repeat;
+    background-size: 16px 16px;
+    color: #16456c;
+}
+
+.login-form input#new_password_again:focus {
+    background: #fff url('locked.png') 20px no-repeat;
+    background-size: 14px 14px;
+    color: #16456c;
+}
 .login-form input#email {
     background: #fff url('mail.png') 20px no-repeat;
     background-size: 16px 16px;

@@ -11,7 +11,6 @@
         <link type="text/css" rel="stylesheet" href="<?php echo $GLOBALS['base_url']; ?>view/assets/font-awesome/css/font-awesome.css">
         <link type="text/css" rel="stylesheet" href="<?php echo $GLOBALS['base_url']; ?>view/assets/css/style.css">
 
-
         <!--js files-->
         <script type="text/javascript" src="<?php echo $GLOBALS['base_url']; ?>view/assets/js/jquery-3.1.1.min.js"></script>
         <script type="text/javascript" src="<?php echo $GLOBALS['base_url']; ?>view/assets/js/jquery.validate.min.js"></script>
@@ -35,9 +34,10 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand text-hide" href="<?php echo $GLOBALS['base_url']; ?>">Online Library</a>
+                    <a class="navbar-brand " href="<?php echo $GLOBALS['base_url']; ?>">Online Library</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
+
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active">
                             <a href="<?php echo $GLOBALS['base_url']; ?>"><i class="fa fa-home" aria-hidden="true"></i>
@@ -55,8 +55,8 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> Prem<span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="<?php echo $GLOBALS['base_url']; ?>profile">View Profile</a></li>
-                                    <li><a href="<?php echo $GLOBALS['base_url']; ?>setting">Profile Setting</a></li>
+                                    <li><a href="<?php echo $GLOBALS['base_url']; ?>login/profile">View Profile</a></li>
+                                    <li><a href="<?php echo $GLOBALS['base_url']; ?>login/setting">Profile Setting</a></li>
                                     <li><a href="<?php echo $GLOBALS['base_url']; ?>login/change_password">Change Password</a></li>
                                     <li><a href="<?php echo $GLOBALS['base_url']; ?>login/logout">Logout</a></li>
                                 </ul>
@@ -75,3 +75,4 @@
                 </div>
             </div>
         </nav>
+        <!--/.Navbar -->
