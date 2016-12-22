@@ -96,14 +96,14 @@ class login{
 
     public function change_password(){
         if (!empty($_POST)){
-            $userdata = $this->model->userDetail();
+            $user_data = $this->model->userDetail();
             $password = $_POST['current_password'];
             $new_password = $_POST['new_password'];
             $password = strip_tags($password);
             $new_password = strip_tags($new_password);
             $password = trim($password);
             $new_password = trim($new_password);
-            if(md5($password) !== $userdata['password']){
+            if(md5($password) !== $user_data['password']){
                 $data['errors']  = array(array("Wrong Current Password"));
             } else {
                 $data['result'] = $this->model->changePassword($new_password);
@@ -119,7 +119,8 @@ class login{
     }
 
     public function profile(){
-
+        $user_data = $this->model->userDetail();
+        $data['user_data'] = $user_data;
         $data['page_title'] = "Library : Profile";
         $data['view_page'] = "users/profile";
         $data['header'] = $GLOBALS['header'];
@@ -129,12 +130,24 @@ class login{
     }
 
     public function setting(){
+        if (!empty($_POST)){
+            $first_name = trim(strip_tags($_POST['first_name']));
+            $last_name = trim(strip_tags($_POST['last_name']));
+            $email = trim(strip_tags($_POST['email']));
+            $contact_number = trim(strip_tags($_POST['contact_number']));
+            $address = trim(strip_tags($_POST['address']));
+            $change_data = array("first_name"=>$first_name,"last_name"=>$last_name,"email"=>$email,"contact_number"=>$contact_number,"address"=>$address);
 
+            $data['result'] = $this->model->editProfile($change_data);
+
+
+        }
+        $user_data = $this->model->userDetail();
+        $data['user_data'] = $user_data;
         $data['page_title'] = "Library : Setting";
         $data['view_page'] = "users/setting";
         $data['header'] = $GLOBALS['header'];
         $data['footer'] = $GLOBALS['footer'];
-
         return $data;
     }
 

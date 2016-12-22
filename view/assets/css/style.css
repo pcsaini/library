@@ -16,7 +16,18 @@ body,main {
 footer.page-footer {
     background-color: #16456C;
 }
-
+.navbar a{
+    color: #ffffff;
+}
+.navbar a:hover{
+    color: #16456C;
+}
+.navbar a:active{
+    color: #16456C;
+}
+.navbar a:focus{
+    color: #16456C;
+}
 @media only screen and (max-width: 768px) {
     .navbar {
         background-color: #16456C;
@@ -145,7 +156,7 @@ login Section*/
     border: 1px solid #16456c;
     color: #16456c;
 }
-label{
+.login-form label{
     color: red;
 }
 .errorDiv{
@@ -190,4 +201,51 @@ label{
     body{
         padding: 10px;
     }
+}
+
+/*  View Profile*/
+.profile .profile-info{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 0 10px;
+}
+.profile .profile-info .profile-pic{
+    text-align: center;
+}
+.profile .profile-info .profile-pic img{
+    height: 200px !important;
+    width: 200px !important;
+}
+.profile .profile-info .information button{
+    background-color:#16456c;
+    color:white;
+    width: 100%;
+}
+.profile .history-info{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 0 10px;
+}
+.profile .table thead{
+    background-color: #16456c;
+    color: #FFFFFF;
+}
+.panel-custom{
+    border-color: #16456c;
+}
+.panel-custom > .panel-heading{
+    background-color: #16456c;
+    color: #FFFFFF;
+}
+.main-heading{
+    margin-top: 50px;
+    padding: 10px;
+    text-align: center;
+}
+.main-heading h2{
+}
+
+.profile .profile-info #selectImage input[type=file]{
+    margin: 10px 0;
+    width:100%;
 }

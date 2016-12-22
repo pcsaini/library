@@ -61,6 +61,18 @@ class auth_model extends DBconfig{
         return $result;
     }
 
+    public function editProfile($data){
+        $user_id = $_SESSION['session_id'];
+        $data['first_name'] = mysqli_real_escape_string($this->connection, $data['first_name']);
+        $data['last_name'] = mysqli_real_escape_string($this->connection, $data['last_name']);
+        $data['email'] = mysqli_real_escape_string($this->connection, $data['email']);
+        $data['contact_number'] = mysqli_real_escape_string($this->connection, $data['contact_number']);
+        $data['address'] = mysqli_real_escape_string($this->connection, $data['address']);
+
+        $result = $this->helper->db_update($data,"users","WHERE user_id = '$user_id'");
+        return $result;
+    }
+
     public function checkIfExists($tbname,$where) {
         $result = $this->helper->check($tbname, $where);
         return $result;
