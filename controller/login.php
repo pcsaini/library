@@ -95,13 +95,19 @@ class login{
     }
 
     public function change_password(){
-
         if (!empty($_POST)){
-            $password = $_POST['new_password'];
+            $userdata = $this->model->userDetail();
+            $password = $_POST['current_password'];
+            $new_password = $_POST['new_password'];
             $password = strip_tags($password);
+            $new_password = strip_tags($new_password);
             $password = trim($password);
-
-            $result = $this->model->changePassword($password);
+            $new_password = trim($new_password);
+            if(md5($password) !== $userdata['password']){
+                $data['errors']  = array(array("Wrong Current Password"));
+            } else {
+                $data['result'] = $this->model->changePassword($new_password);
+            }
         }
 
         $data['page_title'] = "Library : Change Password";
