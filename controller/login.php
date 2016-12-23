@@ -16,7 +16,7 @@ class login{
     public function index(){
         if (!empty($_POST)){
             $data['post'] = $_POST;
-            $user_type = $_GET['user_type'];
+            $user_type = 1;
             $username = $_POST['username'];
             $password = $_POST['password'];
 

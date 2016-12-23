@@ -12,7 +12,7 @@
                 }
             }
             ?>
-            <form method="post" id="login-form" action="<?php echo $GLOBALS['dynamic_url']; ?>login?user_type=1" autocomplete="off">
+            <form method="post" id="login-form" action="<?php echo $GLOBALS['dynamic_url']; ?>login" autocomplete="off">
                 <input type="text" placeholder="Username" id="username" name="username" value="<?php if(isset($_POST['username'])) { echo $post['username']; } ?>"/>
                 <input type="password" placeholder="Password" id="password" name="password"/>
                 <button type="submit" id="btn-login"><i class="fa fa-sign-in"></i> Login</button>

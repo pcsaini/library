@@ -23,3 +23,4 @@ $GLOBALS['database']="library";
 //common views
 $GLOBALS['header'] = "header.php";
 $GLOBALS['footer'] = "footer.php";
+$GLOBALS['black_page'] = "black_page.php";
