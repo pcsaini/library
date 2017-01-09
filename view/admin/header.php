@@ -8,13 +8,19 @@
     <title><?php echo $page_title; ?></title>
 
     <link rel="stylesheet" href="<?php echo $GLOBALS['base_url']; ?>view/assets/css/admin.css">
+    <link rel="stylesheet" href="<?php echo $GLOBALS['base_url']; ?>view/assets/css/style.css">
     <link rel="stylesheet" href="<?php echo $GLOBALS['base_url']; ?>view/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo $GLOBALS['base_url']; ?>view/assets/font-awesome/css/font-awesome.min.css">
 
     <script src="<?php echo $GLOBALS['base_url']; ?>view/assets/js/jquery-3.1.1.min.js"></script>
+    <script src="<?php echo $GLOBALS['base_url']; ?>view/assets/js/jquery.validate.min.js"></script>
     <script src="<?php echo $GLOBALS['base_url']; ?>view/assets/js/bootstrap.min.js"></script>
+    <script src="<?php echo $GLOBALS['base_url']; ?>view/assets/js/bootbox.min.js"></script>
     <script src="<?php echo $GLOBALS['base_url']; ?>view/assets/js/metisMenu.min.js"></script>
     <script src="<?php echo $GLOBALS['base_url']; ?>view/assets/js/admin.js"></script>
+    <script src="<?php echo $GLOBALS['base_url']; ?>view/assets/js/app.js"></script>
+
+
 </head>
 <body>
 
@@ -79,30 +85,30 @@
                 </div>
                 <ul class="nav" id="side-menu">
                     <li>
-                        <a href="#"><i class="fa fa-dashboard fa-fw nav_icon"></i> Dashboard</a>
+                        <a href="<?php echo $GLOBALS['base_url']; ?>admin/dashboard"><i class="fa fa-dashboard fa-fw nav_icon"></i> Dashboard</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-laptop nav_icon"></i> Book<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                            <li><a href="#">Book Category</a></li>
-                            <li><a href="#">Add New Book</a></li>
-                            <li><a href="#">View Book</a></li>
+                            <li><a href="<?php echo $GLOBALS['base_url']; ?>admin/book_category">Book Category</a></li>
+                            <li><a href="<?php echo $GLOBALS['base_url']; ?>admin/add_book">Add New Book</a></li>
+                            <li><a href="<?php echo $GLOBALS['base_url']; ?>admin/view_book">View Book</a></li>
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-indent nav_icon"></i> Students<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                            <li><a href="#">Add Student</a></li>
-                            <li><a href="#">View Student</a></li>
+                            <li><a href="<?php echo $GLOBALS['base_url']; ?>admin/add_student">Add Student</a></li>
+                            <li><a href="<?php echo $GLOBALS['base_url']; ?>admin/view_student">View Student</a></li>
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-flask nav_icon"></i> Requested Books</a>
+                        <a href="<?php echo $GLOBALS['base_url']; ?>admin/requested_book"><i class="fa fa-flask nav_icon"></i> Requested Books</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-flask nav_icon"></i> Issued Books</a>
+                        <a href="<?php echo $GLOBALS['base_url']; ?>admin/issued_book"><i class="fa fa-flask nav_icon"></i> Issued Books</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-flask nav_icon"></i> Rules</a>

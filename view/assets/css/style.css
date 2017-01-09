@@ -249,3 +249,72 @@ login Section*/
     margin: 10px 0;
     width:100%;
 }
+
+/*
+Image setting*/
+#image_upload_form{
+    text-align: center;
+}
+#imgArea {
+    display: inline-block;
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    background-color: #eee;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
+#imgArea img {
+    outline: medium none;
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+}
+#imgChange {
+    background: rgba(22, 69, 108,0.7);
+    bottom: 0;
+    color: #FFFFFF;
+    display: block;
+    height: 30px;
+    left: 0;
+    line-height: 32px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+#imgChange input[type="file"] {
+    bottom: 0;
+    cursor: pointer;
+    height: 100%;
+    left: 0;
+    margin: 0;
+    opacity: 0;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+}
+/* Progressbar */
+.progressBar {
+    background: none repeat scroll 0 0 #E0E0E0;
+    left: 0;
+    padding: 3px 0;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: none;
+}
+.progressBar .bar {
+    background-color: #FF6C67;
+    width: 0%;
+    height: 14px;
+}
+.progressBar .percent {
+    display: inline-block;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    top: 2px;
+    width: 100%;
+}

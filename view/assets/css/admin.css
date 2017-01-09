@@ -1,7 +1,7 @@
 html, body{
     font-family: 'Roboto', sans-serif;
     font-size: 100%;
-    background:#16456C !important;
+    background:#ffffff !important;
     overflow-x: hidden;
     height: 100%;
 }
@@ -102,6 +102,7 @@ html, body{
 }
 .nav>li>a:focus, .nav>li>a:hover {
     background-color:rgba(239, 85, 58, 0) !important;
+    color: #ffffff !important;
 }
 .navbar .navbar-nav li a i {
     border: 1px solid #fff;
@@ -318,7 +319,7 @@ i.nav_icon {
     color: #ffffff;
     font-size:14px;
 }
-.form-control {
+form.navbar-form.navbar-right .form-control {
     background: none !important;
     border: 1px solid #fff !important;
     border-radius: 20px !important;
@@ -344,7 +345,7 @@ ul.nav.navbar-nav.navbar-right {
 }
 .graphs{
     padding: 2em 1em;
-    background: #f2f4f8;
+    background: #ffffff;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -369,4 +370,7 @@ ul.nav.navbar-nav.navbar-right {
 .user-info h3{
     padding: 10px;
     color: #ffffff;
+}
+label.error{
+    color: red;
 }

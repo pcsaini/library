@@ -13,6 +13,7 @@
 
         <!--js files-->
         <script type="text/javascript" src="<?php echo $GLOBALS['base_url']; ?>view/assets/js/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="<?php echo $GLOBALS['base_url']; ?>view/assets/js/jquery.form.js"></script>
         <script type="text/javascript" src="<?php echo $GLOBALS['base_url']; ?>view/assets/js/jquery.validate.min.js"></script>
         <script type="text/javascript" src="<?php echo $GLOBALS['base_url']; ?>view/assets/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="<?php echo $GLOBALS['base_url']; ?>view/assets/js/main.js"></script>

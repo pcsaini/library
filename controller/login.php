@@ -54,7 +54,8 @@ class login{
             $email = strip_tags($email);
             $email = trim($email);
             if ($this->emailExists($email)) {
-                $data['result'] = $this->model->forgetPassword($email);
+                $this->model->forgetPassword($email);
+                $data['result'] = true;
             }
             else{
                 $data['errors'] = array(array("Email Address Not Exists"));
@@ -63,7 +64,6 @@ class login{
                 header("location: ".$GLOBALS['dynamic_url']."home");
                 exit();
             }
-
 
         }
         $data['page_title'] = "Library : Forget Password";
@@ -130,6 +130,33 @@ class login{
     }
 
     public function setting(){
+        if(isset($_FILES['image_upload_file'])){
+            $output['status'] = false;
+            set_time_limit(0);
+            $allowedImageType = array("image/png","image/jpg","image/jpeg");
+            $path = "view/assets/img/profile_pic/";
+            $path1 = $GLOBALS['base_url']."view/assets/img/profile_pic/";
+
+            if ($_FILES['image_upload_file']['error'] > 0){
+                $output['error'] = "Error in File";
+            } elseif (!in_array($_FILES['image_upload_file']['type'],$allowedImageType)){
+                $output['error'] = "You Can Only upload jpeg, png Image";
+            } elseif (round($_FILES['image_upload_file']["size"] / 1024) > 4096) {
+                $output['error']= "You can upload file size up to 4 MB";
+            } else {
+                $temp_path = $_FILES['image_upload_file']['tmp_name'];
+                $file = pathinfo($_FILES['image_upload_file']['name']);
+                $fileType = $file["extension"];
+                $fileNameNew = rand(333, 999).time().".$fileType";
+
+                move_uploaded_file($temp_path,$path.$fileNameNew);
+                $output['result'] = $this->model->profile_img($fileNameNew);
+                $output['image'] = $path1.$fileNameNew;
+                $output['status']=TRUE;
+            }
+            echo json_encode($output);
+            die();
+        }
         if (!empty($_POST)){
             $first_name = trim(strip_tags($_POST['first_name']));
             $last_name = trim(strip_tags($_POST['last_name']));
@@ -150,7 +177,11 @@ class login{
         $data['footer'] = $GLOBALS['footer'];
         return $data;
     }
+    public function image_upload(){
+        echo "hello";
+        die();
 
+    }
     public function emailExists($email) {
         $result = $this->model->checkIfExists("users","WHERE email='$email'");
         return $result;

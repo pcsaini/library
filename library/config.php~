@@ -16,9 +16,9 @@ $GLOBALS['website_name'] = "Library";
 
 //Database Setting
 $GLOBALS['hostname']="localhost";
-$GLOBALS['username']="root";
-$GLOBALS['password']="";
-$GLOBALS['database']="library";
+$GLOBALS['username']="id179172_library";
+$GLOBALS['password']="pcsaini.";
+$GLOBALS['database']="id179172_library";
 
 //common views
 $GLOBALS['header'] = "header.php";

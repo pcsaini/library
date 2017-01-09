@@ -1,6 +1,5 @@
 <ol class="breadcrumb">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Admin</a></li>
+    <li><a href="<?php echo $GLOBALS['base_url']; ?>">Home</a></li>
     <li class="active">Dashboard</li>
 </ol>
 

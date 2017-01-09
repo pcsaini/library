@@ -24,7 +24,8 @@ class book{
         return $data;
     }
     public function book_detail(){
-        print_r($_GET('book_id'));
+        $book_id = $_GET['book_id'];
+        print_r($book_id);
         die();
         $data['page_title'] = "Library : Book";
         $data['view_page'] = "users/books";
