@@ -151,6 +151,35 @@ class admin{
 
     public function add_student(){
 
+
+        if ( isset($_POST['add_student'])){
+            $data['post'] = $_POST;
+            $first_name = trim(strip_tags($_POST['first_name']));
+            $last_name = trim(strip_tags($_POST['last_name']));
+            $username = trim(strip_tags($_POST['username']));
+            $email = trim(strip_tags($_POST['email']));
+            $gender = trim(strip_tags($_POST['gender']));
+            $batch = trim(strip_tags($_POST['batch']));
+            $stream = trim(strip_tags($_POST['stream']));
+            $password = trim(strip_tags($_POST['password']));
+
+            $user_detail = array('username'=>$username,'password'=>$password,'email'=>$email,'first_name'=>$first_name,'last_name'=>$last_name,'gender'=>$gender,'batch'=>$batch,'stream'=>$stream);
+            print_r($user_detail);
+            die();
+            if ($this->model->addUser($user_detail)){
+                print_r('aa gya');
+                die();
+
+            }
+        }
+        $data['page_title'] = "Admin : Add Student";
+        $data['view_page'] = "admin/add_student";
+        $data['header'] = "admin/header.php";
+        $data['footer'] = "admin/footer.php";
+
+        return $data;
+    }
+    public function check(){
         if ( isset($_REQUEST['username']) && !empty($_REQUEST['username']) ) {
             $username = trim($_REQUEST['username']);
             $username = strip_tags($username);
@@ -164,16 +193,6 @@ class admin{
             echo "true";
             die();
         }
-        if ( isset($_POST['add_student'])){
-            print_r("add student");
-            die();
-        }
-        $data['page_title'] = "Admin : Add Student";
-        $data['view_page'] = "admin/add_student";
-        $data['header'] = "admin/header.php";
-        $data['footer'] = "admin/footer.php";
-
-        return $data;
     }
 
     public function view_student(){

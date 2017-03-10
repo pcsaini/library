@@ -10,7 +10,7 @@
     <div class="panel panel-custom">
         <div class="panel-heading">Add New Student</div>
         <div class="panel-body" style="padding: 10px;">
-            <form class="form-horizontal" action="" method="post" id="add_student">
+            <form class="form-horizontal" action="<?php echo $GLOBALS['dynamic_url'];?>admin/add_student" method="post" id="add_student">
                 <div class="form-group">
                     <label class="control-label col-sm-3" for="first_name">First Name : </label>
                     <div class="col-sm-9">

@@ -14,6 +14,16 @@ class auth_model extends DBconfig{
         $this->connection = $connection->connectToDatabase();
         $this->helper = new helper();
     }
+    public function addUser($data){
+        $final_data = array();
+        $keys =  array_keys($data);
+        foreach ($keys as $key){
+            $values  = mysqli_real_escape_string($this->connection,$data[$key]);
+            $final_data[$key] = $values;
+        }
+        $result = $this->helper->db_insert($final_data, "users");
+        return $result;
+    }
     public function login($username, $password, $user_type){
         $username = mysqli_real_escape_string($this->connection,$username);
         $password = mysqli_real_escape_string($this->connection,$password);
